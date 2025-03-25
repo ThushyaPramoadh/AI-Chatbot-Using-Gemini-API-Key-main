@@ -1,32 +1,99 @@
-# AI Chatbot Using Gemini API Key
+# AI Chatbot Using Gemini API
 
-This project is a simple chatbot deployed with HTML, CSS, JavaScript, Python (Flask), and the Gemini AI API. It allows users to interact with a chatbot interface via a webpage. User messages are processed by the Gemini API, which generates responses displayed on the web page.
+## Overview
+This project is an AI-powered chatbot utilizing Google's Gemini API. The chatbot processes user queries and generates intelligent responses in real-time.
 
-## Project Structure
+## Features
+- Integrates with Google's Gemini API for AI-powered responses
+- User-friendly interface with Flask
+- Supports text-based conversations
 
-```
-AI_Chatbot_Gemini/
-├── app.py                  # Main Python file with Flask app and routes
-├── templates/
-│   └── index.html          # HTML file for the chatbot interface
-├── static/
-│   ├── style.css           # CSS for styling the chatbot interface
-│   └── script.js           # JavaScript for handling user interactions and API calls
-└── README.md               # Project documentation
-```
-
-## Requirements
-
+## Installation
+### Prerequisites
 - Python 3.x
 - Flask
-- requests
+- A valid Gemini API Key
 
-To install the required Python packages, you can run:
-```bash
-pip install flask requests
+### Setup
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/ThushyaPramoadh/AI-Chatbot-Using-Gemini-API-Key-main.git
+   cd AI-Chatbot-Using-Gemini-API-Key-main
+   ```
+2. Create and activate a virtual environment:
+   - **Windows**:
+     ```sh
+     python -m venv venv
+     venv\Scripts\activate
+     ```
+   - **MacOS/Linux**:
+     ```sh
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+3. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. Set up your Gemini API Key in an environment variable:
+   - **Windows**:
+     ```sh
+     set GEMINI_API_KEY=your_api_key_here
+     ```
+   - **MacOS/Linux**:
+     ```sh
+     export GEMINI_API_KEY="your_api_key_here"
+     ```
+5. Run the application:
+   ```sh
+   python app.py
+   ```
+6. Open your browser and visit:
+   ```
+   http://127.0.0.1:5000
+   ```
+
+## Usage
+- Enter a message in the chatbot interface.
+- The chatbot will process your input and return AI-generated responses.
+
+## Folder Structure
+```
+AI_Chatbot_Gemini/
+├── app.py                  # Main Flask application
+├── requirements.txt        # Dependencies
+├── README.md               # Project documentation
+├── templates/              # HTML templates
+│   └── index.html
+├── static/                 # Static files (CSS, JS, images)
+│   ├── style.css
+│   └── script.js
+└── tests/                  # Unit tests
+    └── test_app.py
 ```
 
-## Setup
+## Contributing
+1. Fork the repository.
+2. Create a new branch:
+   ```sh
+   git checkout -b feature-branch
+   ```
+3. Commit your changes:
+   ```sh
+   git commit -m "Added new feature"
+   ```
+4. Push to the branch:
+   ```sh
+   git push origin feature-branch
+   ```
+5. Open a Pull Request.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+For any queries or issues, open an issue in the repository or contact the author.
+
 
 1. **Clone the Repository**:
     ```bash
