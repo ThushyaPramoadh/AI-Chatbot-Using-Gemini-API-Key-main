@@ -1,4 +1,5 @@
-
+/* General Styles */
+/* Animated Gradient Background */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,36 +7,129 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f2f2f2;
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
 }
 
+/* Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+}
+
+/* Chat Container */
 .chat-container {
     width: 400px;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Chat Box */
 #chat-box {
     max-height: 300px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #fafafa;
 }
+
+/* Scrollbar Styling */
+#chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background: #fafafa;
+    border-radius: 10px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+
+/* Message Styling */
+.message {
+    padding: 8px 12px;
+    border-radius: 18px;
+    margin-bottom: 5px;
+    max-width: 75%;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;  /* Black text for all messages */
+}
+
+.user-message {
+    background-color: #cce5ff; /* Light blue for user messages */
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #e5e5e5; /* Light gray for bot messages */
+    align-self: flex-start;
+}
+
+/* Input and Button */
+.input-container {
+    display: flex;
+    gap: 8px; /* Increased gap for more space */
+    align-items: center;
+}
+
 
 #user-input {
-    width: calc(100% - 70px);
-    padding: 8px;
-    margin-right: 10px;
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
 }
 
+#user-input:focus {
+    border: 1px solid #007bff;
+}
+
+/* Button */
 button {
-    padding: 8px 12px;
+    padding: 11px 18px;  /* Increased padding for better clickability */
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
+    border-radius: 6px;  /* More rounded for a modern look */
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
+    font-size: 14px;  /* Slightly larger for better readability */
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    position: static;
+    top: 3px; /* Moves the button slightly downward */
+}
+
+button:hover {
+    background-color: #00b3b3;
+    transform: scale(1.05);  /* Slight pop effect on hover */
+}
+
+button:active {
+    transform: scale(0.95);  /* Click effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .chat-container {
+        width: 90%;
+    }
 }
